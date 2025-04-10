@@ -21,6 +21,16 @@ const Index = () => {
       <Skills />
       <Classes />
       <Contact />
+      <div className="max-w-6xl mx-auto px-4 py-8 text-center">
+        <a 
+          href="/resume.html" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-block px-6 py-3 bg-portfolio-800 text-white rounded-md hover:bg-portfolio-700 transition-colors"
+        >
+          View Detailed Resume
+        </a>
+      </div>
       <Footer />
     </div>
   );

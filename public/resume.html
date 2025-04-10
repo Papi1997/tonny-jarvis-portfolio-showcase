@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tonny Onwonga - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Base styles */
+    :root {
+      --portfolio-accent: #F59E0B;
+      --portfolio-800: #1E3A8A;
+      --portfolio-700: #4338ca;
+      --portfolio-600: #4f46e5;
+      --portfolio-500: #6366f1;
+      --portfolio-400: #818cf8;
+      --portfolio-300: #a5b4fc;
+      --portfolio-200: #c7d2fe;
+      --portfolio-100: #e0e7ff;
+      --portfolio-50: #eef2ff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #f9fafb;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      color: var(--portfolio-800);
+      margin-bottom: 1rem;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .name {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--portfolio-accent);
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .job {
+      margin-bottom: 2rem;
+    }
+    
+    .job-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    
+    .job-company {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+    
+    .company-name {
+      font-weight: 500;
+      color: var(--portfolio-700);
+    }
+    
+    .job-date {
+      color: #6b7280;
+    }
+    
+    .education-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .education-school {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    
+    .education-date {
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+    
+    ul {
+      list-style-type: none;
+      margin-left: 1rem;
+    }
+    
+    li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    li::before {
+      content: "•";
+      color: var(--portfolio-accent);
+      position: absolute;
+      left: 0;
+    }
+    
+    .language-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    
+    .language-name {
+      font-weight: 500;
+    }
+    
+    .language-level {
+      color: #6b7280;
+    }
+    
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .skill-tag {
+      background-color: var(--portfolio-100);
+      color: var(--portfolio-800);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+    }
+    
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: var(--portfolio-800);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+    
+    .print-btn:hover {
+      background-color: var(--portfolio-700);
+    }
+    
+    .back-to-portfolio {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--portfolio-800);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .back-to-portfolio:hover {
+      color: var(--portfolio-accent);
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+      
+      .name {
+        font-size: 2rem;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .job-company {
+        flex-direction: column;
+      }
+    }
+    
+    @media print {
+      body {
+        padding: 0;
+        background-color: white;
+      }
+      
+      .print-btn, .back-to-portfolio {
+        display: none;
+      }
+      
+      .header {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+      }
+      
+      .section-title {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .job, .education-item {
+        margin-bottom: 1rem;
+      }
+      
+      @page {
+        margin: 1cm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">Print Resume</button>
+  
+  <div class="header">
+    <h1 class="name">Tonny Onwonga</h1>
+    <div class="contact-info">
+      <span>tonnyjarvis4@gmail.com</span>
+      <span>+254799374150</span>
+    </div>
+  </div>
+  
+  <section>
+    <h2 class="section-title">Introduction</h2>
+    <h3>Career Objectives</h3>
+    <ul>
+      <li>To provide operational and logistical support for impactful projects, ensuring seamless implementation and evaluation.</li>
+      <li>To leverage data analysis and project management skills for fostering efficient and sustainable outcomes.</li>
+      <li>To contribute to the development of innovative operational strategies within global programs.</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h2 class="section-title">Work Experience</h2>
+    
+    <div class="job">
+      <h3 class="job-title">Card and ATM Operations Specialist</h3>
+      <div class="job-company">
+        <span class="company-name">NCBA Group</span>
+        <span class="job-date">Oct 2022 – Present</span>
+      </div>
+      <ul>
+        <li>Coordinated operational planning for card production and renewals, ensuring adherence to SLAs.</li>
+        <li>Oversaw logistics and vendor management for the timely delivery of critical project components, including card issuance.</li>
+        <li>Championed multiple projects, such as the migration of card pins and system upgrades, enhancing process efficiency.</li>
+        <li>Ensured compliance with audit and enterprise risk frameworks by implementing best practices and maintaining detailed documentation.</li>
+      </ul>
+      <h4 style="margin-top: 0.75rem; font-weight: 600;">Key Achievements:</h4>
+      <ul>
+        <li>Successfully led pilot testing for a new internet banking system, delivering operational insights for scaling.</li>
+        <li>Strengthened customer satisfaction by resolving service requests within stipulated timelines.</li>
+      </ul>
+    </div>
+    
+    <div class="job">
+      <h3 class="job-title">Contact Centre Customer Experience Associate</h3>
+      <div class="job-company">
+        <span class="company-name">NCBA Group</span>
+        <span class="job-date">Jul 2022 – Sep 2022</span>
+      </div>
+      <ul>
+        <li>Managed customer queries and service requests, demonstrating strong interpersonal and problem-solving skills.</li>
+        <li>Conducted surveys to assess customer satisfaction and provided actionable recommendations for service improvement.</li>
+        <li>Collaborated with cross-functional teams to prevent fraud and ensure excellence to meet the audit and enterprise risk framework of the group, e.g., on PCI DSS.</li>
+      </ul>
+    </div>
+    
+    <div class="job">
+      <h3 class="job-title">Economist Intern</h3>
+      <div class="job-company">
+        <span class="company-name">Ministry of Sports, Culture, and Heritage</span>
+        <span class="job-date">May 2019 – Sep 2019</span>
+      </div>
+      <ul>
+        <li>Contributed to budget preparation, financial planning, and strategic management activities.</li>
+        <li>Analyzed data to inform decision-making processes, gaining experience in economic and statistical planning.</li>
+      </ul>
+    </div>
+  </section>
+  
+  <section>
+    <h2 class="section-title">Education</h2>
+    
+    <div class="education-item">
+      <h3 class="education-school">WorldQuant University</h3>
+      <div class="education-date">Nov 2024 – Ongoing</div>
+      <ul>
+        <li>Applied Data Science Lab (Data Visualization, Predictive Models, Machine Learning Ethics).</li>
+      </ul>
+    </div>
+    
+    <div class="education-item">
+      <h3 class="education-school">Amazon Web Services (AWS)</h3>
+      <div class="education-date">Oct 2024 – Ongoing</div>
+      <ul>
+        <li>Data Warehousing, Technical Essentials, and Practical Data Science with Amazon SageMaker.</li>
+      </ul>
+    </div>
+    
+    <div class="education-item">
+      <h3 class="education-school">Power Learn Project</h3>
+      <div class="education-date">Feb 2024 – Aug 2024</div>
+      <ul>
+        <li>Python Programming, Machine Learning, SQL, and Advanced Excel.</li>
+      </ul>
+    </div>
+    
+    <div class="education-item">
+      <h3 class="education-school">Moi University</h3>
+      <div class="education-date">Sep 2016 – Sep 2020</div>
+      <ul>
+        <li>Bachelor of Arts in Economics.</li>
+        <li>Focus: Taxation, Financial Planning, and Statistical Analysis.</li>
+        <li>Financial planning and settlement.</li>
+      </ul>
+    </div>
+  </section>
+  
+  <section>
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-list">
+      <span class="skill-tag">Operational Planning & Logistics Management</span>
+      <span class="skill-tag">Data Analysis (SQL, Python)</span>
+      <span class="skill-tag">Project Cycle Management</span>
+      <span class="skill-tag">Financial Planning and Budgeting</span>
+      <span class="skill-tag">Intermediate SQL Programming</span>
+    </div>
+  </section>
+  
+  <section>
+    <h2 class="section-title">Languages</h2>
+    
+    <div class="language-item">
+      <span class="language-name">Swahili</span>
+      <span class="language-level">Spoken: Native • Written: Native</span>
+    </div>
+    
+    <div class="language-item">
+      <span class="language-name">English</span>
+      <span class="language-level">Spoken: Fluent • Written: Fluent</span>
+    </div>
+    
+    <div class="language-item">
+      <span class="language-name">German</span>
+      <span class="language-level">Spoken: Basic • Written: Basic</span>
+    </div>
+  </section>
+  
+  <section>
+    <h2 class="section-title">Associations</h2>
+    <ul>
+      <li>Moi University Student Economics Association - Former Member</li>
+      <li>Moi University Red Cross - Former Member</li>
+    </ul>
+  </section>
+  
+  <a href="simple-portfolio.html" class="back-to-portfolio">← Back to Portfolio</a>
+  
+  <script>
+    // Simple print functionality
+    document.querySelector('.print-btn').addEventListener('click', function() {
+      window.print();
+    });
+  </script>
+</body>
+</html>
